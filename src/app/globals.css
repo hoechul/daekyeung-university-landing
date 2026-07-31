@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f2e4;
+  --foreground: #241033;
+
+  /* Daekyeung University — 왕관(Crown) 심볼 + 보라색(설립자 도전정신/창의성) 브랜드 컬러 */
+  --dk-purple-950: #150821;
+  --dk-purple-900: #21102f;
+  --dk-purple-800: #301648;
+  --dk-purple-700: #43206a;
+  --dk-purple-600: #5b2c8f;
+  --dk-purple-500: #7a3fb8;
+  --dk-purple-400: #9c62d6;
+  --dk-gold: #d1a94e;
+  --dk-gold-light: #f0d98a;
+  --dk-rose: #c25e8f;
+  --dk-rose-light: #e79fc0;
+  --dk-cream: #f8f2e4;
+  --dk-cream-dim: #e7dcc6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-dk-purple-950: var(--dk-purple-950);
+  --color-dk-purple-900: var(--dk-purple-900);
+  --color-dk-purple-800: var(--dk-purple-800);
+  --color-dk-purple-700: var(--dk-purple-700);
+  --color-dk-purple-600: var(--dk-purple-600);
+  --color-dk-purple-500: var(--dk-purple-500);
+  --color-dk-purple-400: var(--dk-purple-400);
+  --color-dk-gold: var(--dk-gold);
+  --color-dk-gold-light: var(--dk-gold-light);
+  --color-dk-rose: var(--dk-rose);
+  --color-dk-rose-light: var(--dk-rose-light);
+  --color-dk-cream: var(--dk-cream);
+  --color-dk-cream-dim: var(--dk-cream-dim);
+
+  --font-sans: var(--font-sans-kr);
+  --font-serif: var(--font-serif-kr);
+  --font-display: var(--font-display-en);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* 무대 커튼 + 스포트라이트 배경 (Hero, 다크 섹션 공용) */
+.dk-stage-bg {
+  position: relative;
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(240, 217, 138, 0.16) 0%, rgba(240, 217, 138, 0) 60%),
+    linear-gradient(165deg, var(--dk-purple-950) 0%, var(--dk-purple-900) 40%, var(--dk-purple-700) 78%, var(--dk-purple-600) 100%);
+}
+
+.dk-stage-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.25) 0px,
+    rgba(0, 0, 0, 0.25) 2px,
+    transparent 2px,
+    transparent 42px
+  );
+  mix-blend-mode: multiply;
+}
+
+.dk-gold-underline {
+  position: relative;
+}
+
+.dk-gold-underline::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  margin-top: 0.9rem;
+  background: linear-gradient(90deg, var(--dk-gold), var(--dk-gold-light));
+  border-radius: 999px;
+}
+
+.dk-gold-underline.center::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dk-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(240, 217, 138, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+::selection {
+  background: var(--dk-gold);
+  color: var(--dk-purple-950);
+}
