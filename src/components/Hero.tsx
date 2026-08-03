@@ -8,6 +8,14 @@ export default function Hero() {
       <CrownIcon className="pointer-events-none absolute -right-10 -top-10 w-72 h-56 text-dk-gold-light opacity-[0.07] rotate-6" />
 
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8 pt-20 pb-24 sm:pt-28 sm:pb-32">
+        <img
+          src="/dk.png"
+          alt="대경대학교 팩트챗 실습 페이지 QR 코드"
+          width={656}
+          height={656}
+          className="mb-5 h-20 w-20 rounded-lg border border-dk-gold/30 bg-white p-1.5"
+        />
+
         <p className="font-display italic tracking-[0.35em] text-xs sm:text-sm uppercase text-dk-gold-light">
           2026 Daekyeung University · Staff AI Training
         </p>
